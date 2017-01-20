@@ -1,5 +1,22 @@
 h1 Booking
 
-= link_to 'Edit', edit_booking_path(@booking)
-'|
-= link_to 'Back', root_path
+.details
+  p.fields
+    span.field Check In Date:
+    span.value = @booking.check_in_date
+  p.fields
+    span.field Check Out Date:
+    span.value = @booking.check_out_date
+  p.fields
+    span.field Hotel:
+    span.value = @booking.hotel.name
+  p.fields
+    span.field Room:
+    span.value = @booking.room.room_label
+  p.fields
+    span.field Stay Description:
+    span.value = @booking.stay_description
+
+
+= link_to 'Edit', edit_booking_path(@booking), class: 'button'
+= link_to 'Destroy', @booking, data: { confirm: 'Are you sure?' }, method: :delete, class: 'button danger'

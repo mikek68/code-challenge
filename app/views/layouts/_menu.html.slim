@@ -2,4 +2,4 @@ ul
   li = link_to 'Home', root_path
   li = link_to 'Book a Room', new_user_booking_path(user_id: current_user.id)
   li.right = link_to 'Logout', destroy_user_session_path, method: :delete
-  li.right = link_to 'Admin', admin_root_path
+  li.right = link_to 'Admin', admin_root_path, target: '_admin'

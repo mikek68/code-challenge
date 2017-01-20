@@ -9,9 +9,6 @@ body
 
 .header
   span.title TAKL Property Management
-  - if user_signed_in?
-    span.user_info
-      = "Welcome #{current_user.first_name}"
 
 .contents
   - if user_signed_in?

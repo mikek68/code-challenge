@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
   def index
     respond_to do |format|
       format.html {redirect_to :root}
-      format.json { render json: Booking.where(user_id: params[:user_id]) }
+      format.json { render json: Booking.current(params[:user_id], params[:start], params[:end]) }
     end
   end
 

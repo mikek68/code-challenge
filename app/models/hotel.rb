@@ -10,6 +10,6 @@ class Hotel < ActiveRecord::Base
   end
 
   def booked_rooms(start_date, end_date)
-    self.bookings.where('((julianday(?) - julianday(check_out_date)) * (julianday(check_in_date) - julianday(?)) >= 0)', start_date, end_date)
+    self.bookings.where('(EXTRACT(EPOCH FROM (? - check_out_date)) * EXTRACT(EPOCH FROM (check_in_date - ?)) >= 0)', start_date, end_date)
   end
 end
