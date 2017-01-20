@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title Code Challenge
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+body
+
+.header
+  span.title TAKL Property Management
+  - if user_signed_in?
+    span.user_info
+      = "Welcome #{current_user.first_name}"
+
+.contents
+  - if user_signed_in?
+    == render 'layouts/menu'
+
+  - if notice.present?
+    p.notifications.notice == notice
+  - if alert.present?
+    p.notifications.alert == alert
+
+  - if user_signed_in?
+    == yield
+  - else
+    .user_tasks
+      == yield

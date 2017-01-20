@@ -1,0 +1,17 @@
+.user_tasks {
+  width: 500px;
+  border: 1px solid black;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  margin: 0 auto;
+  padding: 10px;
+
+  h2 {
+    background-color: #333;
+    width: 100%;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+  }
+}

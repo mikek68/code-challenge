@@ -1,0 +1,16 @@
+= simple_form_for(@booking, url: path) do |f|
+  - if @booking.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@booking.errors.count, "error")} prohibited this booking from being saved:"
+      ul
+        - @booking.errors.full_messages.each do |message|
+          li = message
+
+  .form-inputs
+    = f.input :user_id,as: :hidden
+    = f.input :check_in_date
+    = f.input :check_out_date
+    = f.input :hotel_id, collection: Hotel.all
+    = f.input :room_id, collection: Room.all.map{ |r| [r.room_label, r.id] }
+    = f.input :stay_description, as: :string, minlength: 0
+  .actions = f.submit
