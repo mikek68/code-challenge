@@ -239,6 +239,8 @@ GEM
       polyglot (>= 0.3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (3.0.4)
+      execjs (>= 0.3.0, < 3)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -272,6 +274,7 @@ DEPENDENCIES
   simple_form
   slim-rails
   spring
+  uglifier (>= 1.3.0)
   web-console
 
 RUBY VERSION
