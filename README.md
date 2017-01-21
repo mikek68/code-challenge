@@ -61,4 +61,5 @@ Rails version: >= 4.0.0
 * Hosting: Project to be hosted on AWS or Heroku
 
 Deployed to Heroku at: https://young-plateau-18582.herokuapp.com
+
 Admin Deployed to Heroku at: https://young-plateau-18582.herokuapp.com/admin
