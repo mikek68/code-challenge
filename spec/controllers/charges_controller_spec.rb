@@ -41,10 +41,11 @@ RSpec.describe ChargesController, type: :controller do
                                     check_out_date: DateTime.now + 5.days
                                     )
 
+      expect(ChargesService).to receive_message_chain(:new, :charge).and_return('succeeded')
       get :create, nil, {booking_id: booking.id}
       expect(response).to have_http_status(302)
-      expect(flash[:error]).to eq('Cannot charge a customer that has no active card')
-      expect(response).to redirect_to(new_charge_path(booking_id: booking.id))
+      expect(flash[:notice]).to eq('Payment: succeeded')
+      expect(response).to redirect_to(booking_path(booking))
     end
   end
 
