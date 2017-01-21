@@ -6,25 +6,7 @@ class ChargesController < ApplicationController
 
   def create
     @booking = Booking.find_by_id(session[:booking_id])
-    @amount = @booking.charges_in_cents
-    @amount_dollars = @booking.total_charges
-    @description = @booking.description
-
-    customer = Stripe::Customer.create(
-      :email => params[:stripeEmail],
-      :source  => params[:stripeToken]
-    )
-
-    charge = Stripe::Charge.create(
-      :customer    => customer.id,
-      :amount      => @amount,
-      :description => @description,
-      :currency    => 'usd'
-    )
-
-    charge_status = charge["status"]
-    Charge.create(booking_id: @booking.id, amount: @booking.total_charges)
-
+    charge_status = ChargesService.new(@booking, params).charge
     redirect_to booking_path(@booking), notice: "Payment: #{charge_status}" and return
   rescue Stripe::CardError => e
     flash[:error] = e.message
