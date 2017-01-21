@@ -13,5 +13,18 @@ permit_params :name, :address, :city, :state, :zip_code, :phone_number
 #   permitted
 # end
 
+index do
+  id_column
+  column :name
+  column :address
+  column :city
+  column :state
+  column :zip_code
+  column :phone_number
+  column 'Rooms', sortable: :rooms_count do |hotel|
+    hotel.rooms_count
+  end
+  actions
+end
 
 end
