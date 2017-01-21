@@ -3,7 +3,7 @@ ActiveAdmin.register RoomType do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :hotel_id, :name
+permit_params :hotel_id, :name, :nightly_charge
 #
 # or
 #

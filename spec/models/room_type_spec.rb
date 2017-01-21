@@ -5,4 +5,5 @@ describe RoomType, type: :model do
   it { is_expected.to have_many(:rooms) }
   it { is_expected.to validate_presence_of(:hotel_id) }
   it { is_expected.to validate_presence_of(:name) }
+  it { is_expected.to validate_presence_of(:nightly_charge) }
 end

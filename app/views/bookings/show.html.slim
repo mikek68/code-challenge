@@ -17,7 +17,12 @@
     p.fields
       span.field Stay Description:
       span.value = @booking.stay_description
+    p.fields
+      span.field Total Charges:
+      span.value = "#{@booking.total_charges} #{@booking.charge.present? ? 'PAID' : 'DUE'}"
 
 
     = link_to 'Edit', edit_booking_path(@booking), class: 'button'
+    - if @booking.charge.blank?
+      = link_to 'Pay Charges', new_charge_path(booking_id: @booking.id), class: 'button success'
     = link_to 'Destroy', @booking, data: { confirm: 'Are you sure?' }, method: :delete, class: 'button danger'

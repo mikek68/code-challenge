@@ -24,11 +24,15 @@
   }
 }
 
-.danger {
+a.danger {
   background-color: red !important;
-  a {
-    text-decoration: none;
-  }
+  text-decoration: none;
+}
+
+a.success {
+  background-color: rgb(222,241,215) !important;
+  text-decoration: none;
+  color: black !important;
 }
 
 div#error_explanation {
@@ -86,4 +90,8 @@ div.details {
       font-size: 1.1em;
     }
   }
+}
+
+.charge_amount, .charge_description{
+  font-size: 1.25em;
 }

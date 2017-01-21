@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
 
+  resources :charges, only: [:new, :create]
   resources :users, only: [:index] do
     resources :bookings, shallow: true
   end

@@ -5,4 +5,5 @@ class RoomType < ActiveRecord::Base
 
   validates :hotel_id, presence: true
   validates :name, presence: true
+  validates :nightly_charge, presence: true
 end
