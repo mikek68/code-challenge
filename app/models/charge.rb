@@ -1,3 +1,5 @@
 class Charge < ActiveRecord::Base
-  belongs_to :bookings
+
+  belongs_to :booking
+
 end

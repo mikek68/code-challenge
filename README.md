@@ -12,7 +12,7 @@ This specification depicts an application that allows users to book hotel rooms.
     1. The “Bookings” dashboard should be the root path at user sign on
     2. Calendar view
     3. List view
-3. As a user, I want the ability to create a hotel booking in a form. 
+3. As a user, I want the ability to create a hotel booking in a form.
   1. Acceptance Criteria
     1. Fields
       1. Hotel selection
@@ -30,7 +30,7 @@ This specification depicts an application that allows users to book hotel rooms.
     4. “Room Type” Resource list/creation/modification
     5. “Booking” Resource list (optional: modification)
 
-*Optional:* Stripe API Integration (“Test” environment)
+*Optional:* Stripe API Integration (“Test” environment) **COMPLETED**
   1. As a user I want the ability to be charged for my “Booking” based on a nightly rate.
     1. Acceptance Criteria:
       1. Use of the  **stripe**  gem to integrate with the Stripe API
