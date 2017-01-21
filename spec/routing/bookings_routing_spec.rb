@@ -1,14 +1,15 @@
 require "rails_helper"
 
-RSpec.describe BookingsController, type: :routing do
+describe BookingsController, type: :routing do
   describe "routing" do
 
     it "routes to #index" do
-      expect(:get => "/bookings").to route_to("bookings#index")
+      expect(:get => "/users/1/bookings").to route_to("bookings#index", user_id: "1")
+      expect(:get => "/users/1/bookings.json").to route_to("bookings#index", user_id: "1", format: "json")
     end
 
     it "routes to #new" do
-      expect(:get => "/bookings/new").to route_to("bookings#new")
+      expect(:get => "/users/1/bookings/new").to route_to("bookings#new", user_id: "1")
     end
 
     it "routes to #show" do
@@ -20,7 +21,7 @@ RSpec.describe BookingsController, type: :routing do
     end
 
     it "routes to #create" do
-      expect(:post => "/bookings").to route_to("bookings#create")
+      expect(:post => "/users/1/bookings").to route_to("bookings#create", user_id: "1")
     end
 
     it "routes to #update via PUT" do

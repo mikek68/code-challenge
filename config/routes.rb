@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'hotels/:id/available_rooms(.format)' => 'hotels#available_rooms', as: 'hotel_available_rooms'
+  get 'hotels/:id/available_rooms' => 'hotels#available_rooms', as: 'hotel_available_rooms'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

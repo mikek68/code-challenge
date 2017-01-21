@@ -46,7 +46,7 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1
   def destroy
     @booking.destroy
-    redirect_to bookings_url, notice: 'Booking was successfully destroyed.'
+    redirect_to root_url, notice: 'Booking was successfully destroyed.'
   end
 
   private
