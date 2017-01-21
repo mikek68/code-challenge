@@ -19,7 +19,7 @@
       span.value = @booking.stay_description
     p.fields
       span.field Total Charges:
-      span.value = "#{@booking.total_charges} #{@booking.charge.present? ? 'PAID' : 'DUE'}"
+      span.value = "$#{@booking.total_charges} #{@booking.charge.present? ? 'PAID' : 'DUE'}"
 
 
     = link_to 'Edit', edit_booking_path(@booking), class: 'button'
