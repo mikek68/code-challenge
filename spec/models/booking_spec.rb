@@ -7,6 +7,8 @@ describe Booking, type: :model do
   it { is_expected.to validate_presence_of(:user_id) }
   it { is_expected.to validate_presence_of(:hotel_id) }
   it { is_expected.to validate_presence_of(:room_id) }
+  it { is_expected.to validate_presence_of(:check_in_date) }
+  it { is_expected.to validate_presence_of(:check_out_date) }
 
   describe '.current scope' do
     let!(:booking1) { FactoryGirl.create(:booking,

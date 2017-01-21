@@ -9,4 +9,6 @@ class Booking < ActiveRecord::Base
   validates :user_id, presence: true
   validates :hotel_id, presence: true
   validates :room_id, presence: true
+  validates :check_in_date, presence: true
+  validates :check_out_date, presence: true
 end
