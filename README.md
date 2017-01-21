@@ -18,7 +18,7 @@ This specification depicts an application that allows users to book hotel rooms.
       1. Hotel selection
       2. Room Selection (including the display of the room type)
       3. Description of Stay
-      4. Date Start / End (including availability indicator)
+      4. Date Start / End (including availability indicator) **(Accomplished by filtering list of Rooms when Check In / Out dates are modified or a different Hotel is selected)**
 4. As an admin, I want the ability to view and manage a list of resources in the system.
   1. Acceptance Criteria
     1.  Use of the  **Active Admin** gem for administration
