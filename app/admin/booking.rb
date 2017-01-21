@@ -15,5 +15,22 @@ ActiveAdmin.register Booking do
 #   permitted
 # end
 
+index do
+  id_column
+  column :check_in_date
+  column :check_out_date
+  column :stay_description
+  column 'Hotel' do |booking|
+    booking.hotel.name
+  end
+  column 'Charges' do |booking|
+    "$#{booking.total_charges}"
+  end
+  column 'Paid?' do |booking|
+    booking.charge.present?
+  end
+  actions
+end
+
 
 end
